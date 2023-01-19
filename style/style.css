@@ -139,6 +139,12 @@ body {
     margin-bottom: 40px;
 }
 
+.about-me-title,
+.my-languages-title,
+.my-social-network-title {
+    margin-bottom: 10px;
+}
+
 .about-me-list li:not(:last-child),
 .my-languages-list li:not(:last-child),
 .my-social-network-list li:not(:last-child) {
@@ -253,8 +259,18 @@ body {
     text-shadow: 1px 1px 1px black;
 }
 
-h1.full-name {
+.full-name-wrapper {
+    display: flex;
+    gap: 20px;
     margin-bottom: 40px;
+    align-items: center;
+}
+
+.greetings {
+    height: auto;
+    width: 15%;
+    animation: toSayHello 2.5s infinite;
+    animation-timing-function: ease-out;
 }
 
 .main {
@@ -309,3 +325,59 @@ h1.full-name {
 .my-skills-wrapper .inner-block p:not(:last-child) {
     margin-bottom: 7px;
 }
+
+#my-github-link {
+    text-decoration: none;
+    position: relative;
+}
+
+#my-github-link::after {
+    content: "";
+    display: block;
+	position: absolute;
+	left: 50%; 
+    transform: translateX(-50%);
+	width: 0;
+	height: 2.4px; 
+	background-color: #54138c;
+    transition: width .3s ease-out;
+}
+
+#my-github-link:hover::after {
+    width: 100%;
+}
+
+#my-github-link:active {
+    color: #54138c;
+}
+
+@keyframes toSayHello {
+    0% {
+        transform: rotate(0);
+    }
+
+    50% {
+        transform: rotate(0);
+    }
+
+    60% {
+        transform: rotate(-20deg);
+    }
+
+    70% {
+        transform: rotate(20deg);
+    }
+
+    80% {
+        transform: rotate(-20deg);
+    }
+
+    90% {
+        transform: rotate(20deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
